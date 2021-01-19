@@ -1,0 +1,12 @@
+@echo off
+rem 2021 (C) ExL Studios.
+rem Follow CC-BY-NC-SA 4.0 ( https://creativecommons.org/licenses/by-nc-sa/4.0/ )
+rem 
+rem 
+rem File Created By MCDream Server Launcher
+rem READ AND WRITE THIS FILE WITH ASCII !!!
+rem ===Backup-Script=======================================================================
+
+set dir=%DATE:~,4%-%DATE:~5,2%-%DATE:~8,2%_%TIME:~,2%-%TIME:~3,2%-%TIME:~6,2%
+xcopy /y /q /s /e /h .\server\* .\backups\backup_%dir%\
+exit
