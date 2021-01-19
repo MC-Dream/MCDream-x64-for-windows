@@ -1,0 +1,36 @@
+/* THIS FILE WILL BE OVERWRITTEN BY DEV-C++ */
+/* DO NOT EDIT! */
+
+#include <windows.h> // include for version info constants
+
+
+A ICON "MCDream.ico"
+
+//
+// TO CHANGE VERSION INFORMATION, EDIT PROJECT OPTIONS...
+//
+1 VERSIONINFO
+FILEVERSION 1,0,0,172
+PRODUCTVERSION 1,0,0,172
+FILETYPE VFT_APP
+{
+  BLOCK "StringFileInfo"
+  {
+    BLOCK "040904E4"
+    {
+      VALUE "CompanyName", "ExL Studios"
+      VALUE "FileVersion", "1.0.0.172"
+      VALUE "FileDescription", "MCDream"
+      VALUE "InternalName", "MCDream"
+      VALUE "LegalCopyright", "Copyrights (C) 2021 ExL Studios"
+      VALUE "LegalTrademarks", "ExecuteIf"
+      VALUE "OriginalFilename", "MCDream.exe"
+      VALUE "ProductName", "MCDream.exe"
+      VALUE "ProductVersion", "1.0.0.172"
+    }
+  }
+  BLOCK "VarFileInfo"
+  {
+    VALUE "Translation", 0x0409, 1252
+  }
+}
