@@ -1,0 +1,58 @@
+# 2021 (C) ExL Studios.
+# Follow CC-BY-NC-SA 4.0 ( https://creativecommons.org/licenses/by-nc-sa/4.0/ )
+# 
+# 
+# more-info:( https://minecraft-zh.gamepedia.com/Server.properties#Java.E7.89.88 )
+# File Created By MCDream Server Launcher
+# READ AND WRITE THIS FILE WITH ASCII !!!
+#=== Minecraft Server Settings =====================================================================
+
+spawn-protection=16
+max-tick-time=60000
+query.port=25565
+generator-settings=
+sync-chunk-writes=true
+force-gamemode=false
+allow-nether=true
+enforce-whitelist=false
+gamemode=survival
+broadcast-console-to-ops=true
+enable-query=false
+player-idle-timeout=0
+difficulty=easy
+broadcast-rcon-to-ops=true
+spawn-monsters=true
+op-permission-level=4
+pvp=true
+entity-broadcast-range-percentage=100
+snooper-enabled=true
+level-type=default
+enable-status=true
+hardcore=false
+enable-command-block=true
+network-compression-threshold=256
+max-players=100
+max-world-size=29999984
+resource-pack-sha1=
+function-permission-level=2
+rcon.port=25575
+server-port=25565
+server-ip=
+spawn-npcs=true
+allow-flight=false
+level-name=world
+view-distance=10
+resource-pack=
+spawn-animals=true
+white-list=false
+rcon.password=
+generate-structures=true
+online-mode=true
+max-build-height=256
+level-seed=
+prevent-proxy-connections=false
+use-native-transport=true
+enable-jmx-monitoring=false
+motd=A Minecraft Server
+rate-limit=0
+enable-rcon=false
