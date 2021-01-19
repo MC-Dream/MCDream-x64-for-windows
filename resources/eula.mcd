@@ -1,0 +1,10 @@
+# 2021 (C) ExL Studios.
+# Follow CC-BY-NC-SA 4.0 ( https://creativecommons.org/licenses/by-nc-sa/4.0/ )
+# 
+# 
+# File Created By MCDream Server Launcher
+# READ AND WRITE THIS FILE WITH ASCII !!!
+#=== EULA =========================================================================================================
+
+#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
+eula=true
