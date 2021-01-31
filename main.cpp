@@ -151,10 +151,10 @@ class servers // server launcher
 			strcat(commandline,RamMax);
 			strcat(commandline," ");
 			
-			if(optimize) // optimize
-			{
-				strcat(commandline,"-XX:+AggressiveOpts -XX:+UseCompressedOops -XX:+UseCMSCompactAtFullCollection -XX:+UseFastAccessorMethods -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction=2 -XX:CMSInitiatingOccupancyFraction=70 -XX:-DisableExplicitGC -XX:TargetSurvivorRatio=90");
-			}
+			//if(optimize) // optimize
+			//{
+			//	strcat(commandline,"-XX:+AggressiveOpts -XX:+UseCompressedOops -XX:+UseCMSCompactAtFullCollection -XX:+UseFastAccessorMethods -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction=2 -XX:CMSInitiatingOccupancyFraction=70 -XX:-DisableExplicitGC -XX:TargetSurvivorRatio=90");
+			//}
 			strcat(commandline," .\\server.jar");
 			
 			if(!ngui)
