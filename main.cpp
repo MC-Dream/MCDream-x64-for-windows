@@ -14,7 +14,7 @@
  *                                                                                             *
  *                              Start Date   :   2020/01/11                                    *
  *                                                                                             *
- *                              Last Update  :   2020/01/31                                    *
+ *                              Last Update  :   2021/02/16                                    *
  *                                                                                             *
  *---------------------------------------------------------------------------------------------*
  * Functions:                                                                                  *
@@ -151,13 +151,13 @@ class servers // server launcher
 			strcat(commandline,RamMax);
 			strcat(commandline," ");
 			
-			//if(optimize) // optimize
-			//{
-			//	strcat(commandline,"-XX:+AggressiveOpts -XX:+UseCompressedOops -XX:+UseCMSCompactAtFullCollection -XX:+UseFastAccessorMethods -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction=2 -XX:CMSInitiatingOccupancyFraction=70 -XX:-DisableExplicitGC -XX:TargetSurvivorRatio=90");
-			//}
+			if(optimize) // optimize
+			{
+				strcat(commandline,"-XX:+AggressiveOpts -XX:+UseCompressedOops -XX:+UseCMSCompactAtFullCollection -XX:+UseFastAccessorMethods -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction=2 -XX:CMSInitiatingOccupancyFraction=70 -XX:-DisableExplicitGC -XX:TargetSurvivorRatio=90");
+			}
 			strcat(commandline," .\\server.jar");
 			
-			if(!ngui)
+			if(ngui)
 			{
 				strcat(commandline," nogui");
 			}
@@ -301,12 +301,20 @@ int main(int argc, char* argv[])
 		}
 		else if(!strncmp(cfg[i],"optimize",8))
 		{
-			if(debugmode)
+			if(cfg[i][9]=='t')
 			{
-				cout<<"optimize <- true\n";
+				if(debugmode)
+				{
+					cout<<"Optimize <- true\n";
+				}
+				log<<UTC()<<"[INFO]\tOptimize <- true\n";
+				OM=true;
 			}
-			log<<UTC()<<"[INFO]\toptimize <- true\n";
-			OM=true;
+			else
+			{
+				OM=false;
+				log<<UTC()<<"[INFO]\tOptimize <- false\n";
+			}
 		}
 		else if(!strncmp(cfg[i],"AutoEula",8))
 		{
@@ -329,6 +337,7 @@ int main(int argc, char* argv[])
 		{
 			if(cfg[i][6]=='t')
 			{
+				nogui=true;
 				if(debugmode)
 				{
 					cout<<"Nogui <- true\n";
@@ -337,6 +346,7 @@ int main(int argc, char* argv[])
 			}
 			else
 			{
+				nogui=false;
 				if(debugmode)
 				{
 					cout<<"Nogui <- false\n";
@@ -361,7 +371,7 @@ int main(int argc, char* argv[])
 	strcpy(awa.RamMax,Xmx);
 	awa.autoEula=ae;
 	
-	/* TODO (ExecuteIf#1#): User interaction */
+	/* DONE (ExecuteIf#1#): User interaction */
 	if(debugmode)
 	{
 		system("pause");
@@ -377,7 +387,8 @@ int main(int argc, char* argv[])
 		cout<<"|       1       |            Launch the server             |\n";
 		cout<<"|       2       |      Create a backup for the server      |\n";
 		cout<<"|       3       | Create a script for launching the server |\n";
-		cout<<"|       4       |                    Exit                  |\n";
+		cout<<"|       4       |         Edit Server.properties           |\n";
+		cout<<"|       5       |                   Exit                   |\n";
 		cout<<"+----------------------------------------------------------+\n";
 		cout<<"enter the serial number to choose:";
 		int tmp;
@@ -400,6 +411,9 @@ int main(int argc, char* argv[])
 				system("pause");
 				break;
 			case 4:
+				system("notepad .\\server\\server.properties");
+				break;
+			case 5:
 				goto out;
 			default:
 				system("start https://github.com/MC-Dream/MCDream-x64-for-windows/issues");
